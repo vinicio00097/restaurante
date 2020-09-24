@@ -6,6 +6,7 @@
 package gt.com.restaurante.model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -14,46 +15,48 @@ import java.util.Date;
 public class DetalleMenu {
     private int IdDetalleMenu;
     private int IdMenu;
-    private int IdProducto;
     private Date FechaAsignacion;
-    private boolean  Extra;
-    
-    public DetalleMenu(int IdDetalleMenu, int IdMenu, int IdProducto, Date FechaAsignacion, boolean Extra) {
-        this.IdDetalleMenu = IdDetalleMenu;
-        this.IdMenu = IdMenu;
-        this.IdProducto = IdProducto;
-        this.FechaAsignacion = FechaAsignacion;
-        this.Extra = Extra;
+    private Producto producto;
+
+    public DetalleMenu(int idDetalleMenu, int idMenu, Date fechaAsignacion, Producto producto) {
+        IdDetalleMenu = idDetalleMenu;
+        IdMenu = idMenu;
+        FechaAsignacion = fechaAsignacion;
+        this.producto = producto;
     }
-    
-    public void setIdDetalleMenu(int idDetalleMenu) {
-	this.IdDetalleMenu = idDetalleMenu;
-    }
+
+
     public int getIdDetalleMenu() {
         return IdDetalleMenu;
     }
-    public void setIdMenu(int idMenu) {
-        this.IdMenu = idMenu;
+
+    public void setIdDetalleMenu(int idDetalleMenu) {
+        IdDetalleMenu = idDetalleMenu;
     }
+
     public int getIdMenu() {
-	return IdMenu;
+        return IdMenu;
     }
-    public void setIdProducto(int idProducto) {
-        this.IdProducto = idProducto;
+
+    public void setIdMenu(int idMenu) {
+        IdMenu = idMenu;
     }
-    public int getIdProducto() {
-	return IdProducto;
-    }
-    public void setFechaAsignacion(Date fechaAsignacion) {
-	this.FechaAsignacion = fechaAsignacion;
-    }
+
     public Date getFechaAsignacion() {
-	return FechaAsignacion;
+        return FechaAsignacion;
     }
-    public void setExtra(boolean extra) {
-	this.Extra = extra;
-    }        
-    public boolean getExtra() {
-	return Extra;
+
+    public void setFechaAsignacion(Date fechaAsignacion) {
+        FechaAsignacion = fechaAsignacion;
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+
 }

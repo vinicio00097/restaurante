@@ -10,56 +10,49 @@ package gt.com.restaurante.model;
  * @author elunadanilo
  */
 public class OrdenDetalles {
+
     private int IdDetalle;
     private int IdOrden;
-    private int IdProducto;
-    private int IdMenu;
-    private boolean Extra;
-    private float ValorUnitario;
-    
-     public OrdenDetalles(int IdDetalle, int IdOrden, int IdProducto, int IdMenu, boolean Extra, float ValorUnitario) {
-        this.IdDetalle = IdDetalle;
-        this.IdOrden = IdOrden;
-        this.IdProducto = IdProducto;
-        this.IdMenu = IdMenu;
-        this.Extra = Extra;
-        this.ValorUnitario = ValorUnitario;
+    private Producto producto;
+    private Menu menu;
+
+    public OrdenDetalles(int idDetalle, int idOrden, Producto producto, Menu menu) {
+        IdDetalle = idDetalle;
+        IdOrden = idOrden;
+        this.producto = producto;
+        this.menu = menu;
     }
-    
-    public void setIdDetalle(int idDetalle) {
-	this.IdDetalle = idDetalle;
-    }
+
     public int getIdDetalle() {
-	return IdDetalle;
+        return IdDetalle;
     }
-    public void setIdOrden(int idOrden) {
-	this.IdOrden = idOrden;
+
+    public void setIdDetalle(int idDetalle) {
+        IdDetalle = idDetalle;
     }
+
     public int getIdOrden() {
-	return IdOrden;
+        return IdOrden;
     }
-   public void setIdProducto(int idProducto) {
-	this.IdProducto = idProducto;
+
+    public void setIdOrden(int idOrden) {
+        IdOrden = idOrden;
     }
-    public int getIdProducto() {
-	return IdProducto;
+
+    public Producto getProducto() {
+        return producto;
     }
-    public void setIdMenu(int idMenu) {
-	this.IdMenu = idMenu;
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
-    public int getIdMenu() {
-	return IdMenu;
+
+    public Menu getMenu() {
+        return menu;
     }
-    public void setExtra(boolean extra) {
-	this.Extra = extra;
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
-    public boolean getExtra() {
-	return Extra;
-    }
-    public void setExtra(float valorUnitario) {
-	this.ValorUnitario = valorUnitario;
-    }
-    public float getValorUnitario() {
-	return ValorUnitario;
-    }
+
 }

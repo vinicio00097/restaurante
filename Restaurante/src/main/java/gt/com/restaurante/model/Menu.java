@@ -5,6 +5,8 @@
  */
 package gt.com.restaurante.model;
 
+import java.util.List;
+
 /**
  *
  * @author elunadanilo
@@ -13,29 +15,44 @@ public class Menu {
     private int IdMenu;
     private String Descripcion;
     private float ValorMenu;
-    
-    public Menu(int IdMenu, String Descripcion, float ValorMenu) {
-        this.IdMenu = IdMenu;
-        this.Descripcion = Descripcion;
-        this.ValorMenu = ValorMenu;
+    private List<DetalleMenu> productos;
+
+    public Menu(int idMenu, String descripcion, float valorMenu, List<DetalleMenu> productos) {
+        IdMenu = idMenu;
+        Descripcion = descripcion;
+        ValorMenu = valorMenu;
+        this.productos = productos;
     }
-    
-    public void setIdMenu(int idMenu) {
-        this.IdMenu = idMenu;
-    }
+
     public int getIdMenu() {
-	return IdMenu;
+        return IdMenu;
     }
+
+    public void setIdMenu(int idMenu) {
+        IdMenu = idMenu;
+    }
+
     public String getDescripcion() {
-	return Descripcion;
+        return Descripcion;
     }
+
     public void setDescripcion(String descripcion) {
-	Descripcion = descripcion;
+        Descripcion = descripcion;
     }
-    public void setValorMenu(float valorMenu) {
-	this.ValorMenu = valorMenu;
-    }
+
     public float getValorMenu() {
-	return ValorMenu;
+        return ValorMenu;
+    }
+
+    public void setValorMenu(float valorMenu) {
+        ValorMenu = valorMenu;
+    }
+
+    public List<DetalleMenu> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<DetalleMenu> productos) {
+        this.productos = productos;
     }
 }

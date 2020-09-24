@@ -6,6 +6,7 @@
 package gt.com.restaurante.model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -17,16 +18,36 @@ public class Orden {
     private boolean Pagada;
     private boolean Cocinada;
     private int IdCliente;
-    
-    public Orden(int IdOrden, Date Fecha, boolean Pagada, boolean Cocinada, int IdCliente) {
-		this.IdOrden = IdOrden;
-		this.Fecha = Fecha;
-		this.Pagada = Pagada;
-		this.Cocinada = Cocinada;
-		this.IdCliente = IdCliente;
+	private float total;
+	private Cliente cliente;
+	private List<OrdenDetalles> detalle;
+
+	public Orden(int idOrden, Date fecha, boolean pagada, boolean cocinada, int idCliente, List<OrdenDetalles> detalle) {
+		IdOrden = idOrden;
+		Fecha = fecha;
+		Pagada = pagada;
+		Cocinada = cocinada;
+		IdCliente = idCliente;
+		this.detalle = detalle;
 	}
-    
-    public void setIdOrden(int idOrden) {
+
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public float getTotal() {
+		return total;
+	}
+
+	public void setTotal(float total) {
+		this.total = total;
+	}
+
+	public void setIdOrden(int idOrden) {
 		this.IdOrden = idOrden;
 	}
         public int getIdOrden() {
@@ -61,5 +82,21 @@ public class Orden {
 	}
         public int getIdCliente() {
 		return IdCliente;
+	}
+
+	public boolean isPagada() {
+		return Pagada;
+	}
+
+	public boolean isCocinada() {
+		return Cocinada;
+	}
+
+	public List<OrdenDetalles> getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(List<OrdenDetalles> detalle) {
+		this.detalle = detalle;
 	}
 }
